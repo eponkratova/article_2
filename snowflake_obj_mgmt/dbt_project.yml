@@ -1,0 +1,13 @@
+name: 'snowflake_security'
+version: '1.0.0'
+config-version: 2
+
+profile: 'snowflake_security'
+
+target-path: "target"
+macro-paths: ["macros"]
+log-path: "logs"
+clean-targets:
+  - "target"
+  - "dbt_packages"
+  - "dbt_modules"

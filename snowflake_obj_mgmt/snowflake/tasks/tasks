@@ -1,0 +1,9 @@
+- name: TEST_TASK
+  warehouse: TEST_WH
+  schemas:
+    - name: PUBLIC
+      tasks:
+        - name: TEST_TASK
+          column: ID
+          src_tbl: TABLE1
+          tgt_tbl: TABLE2

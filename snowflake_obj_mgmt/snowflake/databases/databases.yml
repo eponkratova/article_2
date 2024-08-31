@@ -1,0 +1,9 @@
+- name: TEST_DB
+  schemas:
+    - SCHEMA1
+    - SCHEMA2
+
+- name: TEST2_DB
+  schemas:
+    - SCHEMA1
+    - SCHEMA2

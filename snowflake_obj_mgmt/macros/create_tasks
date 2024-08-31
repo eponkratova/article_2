@@ -1,0 +1,45 @@
+{% macro create_tasks() %}
+
+{% set file = var('snowflake_tasks_file' , 'snowflake/tasks/tasks.yml') %}
+
+{% set tasks_list = gather_results(file) %}
+
+{%- set tasks_sql -%}
+
+begin name create_tasks;
+
+{% for database in tasks_list %}
+    {% set database_name = database.name %}
+    {% set warehouse_name = database.warehouse %}
+    {% for schema in database.schemas %}
+        {% set schema_name = schema.name %}
+        {% for task in schema.tasks %}
+            {% set task_name =  task.name %}
+            {% set src_table = schema_name ~ '.' ~ task.src_tbl %}
+            {% set tgt_table = schema_name ~ '.' ~ task.tgt_tbl %}
+            {% set col_name = task.column %}
+            CREATE OR REPLACE TASK {{ database_name }}.{{ schema_name }}.{{ task_name }} 
+                WAREHOUSE={{ warehouse_name }}
+                AS 
+                --BEGIN  
+                    INSERT INTO {{ tgt_table }}
+                    SELECT ap.*
+                    FROM {{ src_table }} ap
+                    LEFT JOIN {{ tgt_table }} p
+                    ON ap.{{ col_name }} = p.{{ col_name }}
+                    WHERE p.{{ col_name }} IS NULL;  
+               -- END;  
+        {% endfor %}
+    {% endfor %}
+{% endfor %}
+
+commit;
+
+{%- endset %}
+
+{% do log(tasks_sql, info=True) %}
+{% if not var('dry_run', False) %}
+  {{ run_query(tasks_sql) }}
+{% endif %}
+
+{% endmacro %}

@@ -1,0 +1,27 @@
+- name: ANALYST
+  attributes:
+    login_name: ANALYST
+    display_name: ""
+    first_name: ""
+    last_name: ""
+    email: ""
+    comment: ""
+    disabled: false
+    default_warehouse: TEST_WH
+    default_role: public
+  roles:
+    - READ_ROLE
+
+- name: DEVELOPER
+  attributes:
+    login_name: DEVELOPER
+    display_name: ""
+    first_name: ""
+    last_name: ""
+    email: ""
+    comment: ""
+    disabled: false
+    default_warehouse: TEST_WH
+    default_role: public
+  roles:
+    - WRITE_ROLE

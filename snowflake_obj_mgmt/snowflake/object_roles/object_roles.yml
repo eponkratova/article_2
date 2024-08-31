@@ -1,0 +1,31 @@
+- name: READ_ROLE   
+  warehouses:
+    - name: TEST_WH 
+    - name: TEST_WH_SMALL 
+    - name: TEST_WH_MEDIUM 
+  databases:
+    - name: TEST_DB
+      schemas:
+        - name: SCHEMA1
+          privileges: read
+        - name: SCHEMA2
+          privileges: read
+
+- name: WRITE_ROLE   
+  warehouses:
+    - name: TEST_WH 
+    - name: TEST_WH_SMALL 
+    - name: TEST_WH_MEDIUM 
+  databases: 
+    - name: TEST_DB
+      schemas:
+        - name: SCHEMA1
+          privileges: write
+        - name: SCHEMA2
+          privileges: write
+    - name: TEST2_DB
+      schemas:
+        - name: SCHEMA1
+          privileges: write
+        - name: SCHEMA2
+          privileges: write

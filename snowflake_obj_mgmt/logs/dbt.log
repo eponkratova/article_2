@@ -1,0 +1,111 @@
+[0m12:55:21.936367 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000223359A1610>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000223383D1970>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000223383B7C40>]}
+
+
+============================== 12:55:21.941385 | c3ac1ef9-2e2f-4f16-801e-926935c1f832 ==============================
+[0m12:55:21.941385 [info ] [MainThread]: Running with dbt=1.7.18
+[0m12:55:21.942387 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\katep\\.dbt', 'log_path': 'C:\\Users\\katep\\OneDrive\\Documents\\articles_git\\articles\\snowflake_object_mgmt-master\\logs', 'version_check': 'True', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'invocation_command': 'dbt run-operation create_warehouses', 'static_parser': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m12:55:23.894090 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'c3ac1ef9-2e2f-4f16-801e-926935c1f832', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000223383B7880>]}
+[0m12:55:23.947666 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'c3ac1ef9-2e2f-4f16-801e-926935c1f832', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000223493CF190>]}
+[0m12:55:23.949673 [info ] [MainThread]: Registered adapter: snowflake=1.7.2
+[0m12:55:23.962184 [debug] [MainThread]: checksum: 7ef98830ab3f0215d011ffa635e2417c6313d5b77f40f33d534bad4eb8784f08, vars: {}, profile: , target: , version: 1.7.18
+[0m12:55:23.965180 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m12:55:23.966686 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'c3ac1ef9-2e2f-4f16-801e-926935c1f832', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022349358550>]}
+[0m12:55:24.882344 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'c3ac1ef9-2e2f-4f16-801e-926935c1f832', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000223496550D0>]}
+[0m12:55:24.896469 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'c3ac1ef9-2e2f-4f16-801e-926935c1f832', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022349655160>]}
+[0m12:55:24.897476 [info ] [MainThread]: Found 0 sources, 0 exposures, 0 metrics, 454 macros, 0 groups, 0 semantic models
+[0m12:55:24.899476 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'c3ac1ef9-2e2f-4f16-801e-926935c1f832', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000223495CDAC0>]}
+[0m12:55:24.901075 [debug] [MainThread]: Acquiring new snowflake connection 'macro_create_warehouses'
+[0m12:55:24.924276 [info ] [MainThread]: created stage: TEST_DB.PUBLIC.stage
+[0m12:55:24.925199 [info ] [MainThread]: put file: snowflake/warehouses/warehouses.yml
+[0m12:55:24.934828 [debug] [MainThread]: Using snowflake connection "macro_create_warehouses"
+[0m12:55:24.936445 [debug] [MainThread]: On macro_create_warehouses: /* {"app": "dbt", "dbt_version": "1.7.18", "profile_name": "snowflake_security", "target_name": "dev", "connection_name": "macro_create_warehouses"} */
+create or replace stage TEST_DB.PUBLIC.stage;
+[0m12:55:24.936445 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m12:55:27.061357 [debug] [MainThread]: SQL status: SUCCESS 1 in 2.0 seconds
+[0m12:55:27.063363 [debug] [MainThread]: Using snowflake connection "macro_create_warehouses"
+[0m12:55:27.065358 [debug] [MainThread]: On macro_create_warehouses: /* {"app": "dbt", "dbt_version": "1.7.18", "profile_name": "snowflake_security", "target_name": "dev", "connection_name": "macro_create_warehouses"} */
+put file://snowflake/warehouses/warehouses.yml @TEST_DB.PUBLIC.stage;
+[0m12:55:32.364494 [debug] [MainThread]: SQL status: SUCCESS 1 in 5.0 seconds
+[0m12:55:32.372030 [debug] [MainThread]: Using snowflake connection "macro_create_warehouses"
+[0m12:55:32.373035 [debug] [MainThread]: On macro_create_warehouses: /* {"app": "dbt", "dbt_version": "1.7.18", "profile_name": "snowflake_security", "target_name": "dev", "connection_name": "macro_create_warehouses"} */
+create or replace file format TEST_DB.PUBLIC.file_format
+    
+    
+      type = 'CSV'
+      record_delimiter = '||'
+    
+  
+    ;
+[0m12:55:32.705224 [debug] [MainThread]: SQL status: SUCCESS 1 in 0.0 seconds
+[0m12:55:32.710267 [debug] [MainThread]: Using snowflake connection "macro_create_warehouses"
+[0m12:55:32.712245 [debug] [MainThread]: On macro_create_warehouses: /* {"app": "dbt", "dbt_version": "1.7.18", "profile_name": "snowflake_security", "target_name": "dev", "connection_name": "macro_create_warehouses"} */
+select
+      $1 as raw_data
+    from @TEST_DB.PUBLIC.stage (
+      file_format => TEST_DB.PUBLIC.file_format
+    )
+    ;
+[0m12:55:33.073012 [debug] [MainThread]: SQL status: SUCCESS 1 in 0.0 seconds
+[0m12:55:33.087496 [info ] [MainThread]: -- set single transaction to rollback if errors
+begin name create_warehouses;
+use role sysadmin;
+
+CREATE WAREHOUSE IF NOT EXISTS TEST_WH_MEDIUM  
+    WITH 
+    WAREHOUSE_SIZE = MEDIUM
+    MAX_CLUSTER_COUNT = 1
+    AUTO_SUSPEND = 600
+    AUTO_RESUME = True
+    INITIALLY_SUSPENDED = True
+    COMMENT = ''
+    ;CREATE WAREHOUSE IF NOT EXISTS TEST_WH_SMALL  
+    WITH 
+    WAREHOUSE_SIZE = SMALL
+    MAX_CLUSTER_COUNT = 1
+    AUTO_SUSPEND = 600
+    AUTO_RESUME = True
+    INITIALLY_SUSPENDED = True
+    COMMENT = ''
+    ;commit;
+[0m12:55:33.089494 [debug] [MainThread]: Using snowflake connection "macro_create_warehouses"
+[0m12:55:33.090494 [debug] [MainThread]: On macro_create_warehouses: /* {"app": "dbt", "dbt_version": "1.7.18", "profile_name": "snowflake_security", "target_name": "dev", "connection_name": "macro_create_warehouses"} */
+-- set single transaction to rollback if errors
+begin name create_warehouses;
+[0m12:55:33.332362 [debug] [MainThread]: SQL status: SUCCESS 1 in 0.0 seconds
+[0m12:55:33.334437 [debug] [MainThread]: Using snowflake connection "macro_create_warehouses"
+[0m12:55:33.336358 [debug] [MainThread]: On macro_create_warehouses: /* {"app": "dbt", "dbt_version": "1.7.18", "profile_name": "snowflake_security", "target_name": "dev", "connection_name": "macro_create_warehouses"} */
+use role sysadmin;
+[0m12:55:33.600572 [debug] [MainThread]: SQL status: SUCCESS 1 in 0.0 seconds
+[0m12:55:33.601573 [debug] [MainThread]: Using snowflake connection "macro_create_warehouses"
+[0m12:55:33.602571 [debug] [MainThread]: On macro_create_warehouses: /* {"app": "dbt", "dbt_version": "1.7.18", "profile_name": "snowflake_security", "target_name": "dev", "connection_name": "macro_create_warehouses"} */
+CREATE WAREHOUSE IF NOT EXISTS TEST_WH_MEDIUM  
+    WITH 
+    WAREHOUSE_SIZE = MEDIUM
+    MAX_CLUSTER_COUNT = 1
+    AUTO_SUSPEND = 600
+    AUTO_RESUME = True
+    INITIALLY_SUSPENDED = True
+    COMMENT = ''
+    ;
+[0m12:55:33.843371 [debug] [MainThread]: SQL status: SUCCESS 1 in 0.0 seconds
+[0m12:55:33.844365 [debug] [MainThread]: Using snowflake connection "macro_create_warehouses"
+[0m12:55:33.846366 [debug] [MainThread]: On macro_create_warehouses: /* {"app": "dbt", "dbt_version": "1.7.18", "profile_name": "snowflake_security", "target_name": "dev", "connection_name": "macro_create_warehouses"} */
+CREATE WAREHOUSE IF NOT EXISTS TEST_WH_SMALL  
+    WITH 
+    WAREHOUSE_SIZE = SMALL
+    MAX_CLUSTER_COUNT = 1
+    AUTO_SUSPEND = 600
+    AUTO_RESUME = True
+    INITIALLY_SUSPENDED = True
+    COMMENT = ''
+    ;
+[0m12:55:34.213864 [debug] [MainThread]: SQL status: SUCCESS 1 in 0.0 seconds
+[0m12:55:34.214863 [debug] [MainThread]: Using snowflake connection "macro_create_warehouses"
+[0m12:55:34.216367 [debug] [MainThread]: On macro_create_warehouses: /* {"app": "dbt", "dbt_version": "1.7.18", "profile_name": "snowflake_security", "target_name": "dev", "connection_name": "macro_create_warehouses"} */
+COMMIT
+[0m12:55:34.576188 [debug] [MainThread]: SQL status: SUCCESS 1 in 0.0 seconds
+[0m12:55:34.578195 [debug] [MainThread]: On macro_create_warehouses: Close
+[0m12:55:34.982675 [debug] [MainThread]: Command `dbt run-operation` succeeded at 12:55:34.982675 after 13.14 seconds
+[0m12:55:34.983687 [debug] [MainThread]: Connection 'macro_create_warehouses' was properly closed.
+[0m12:55:34.984684 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000223359A1610>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000223493CF190>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000223495E5160>]}
+[0m12:55:34.984684 [debug] [MainThread]: Flushing usage events
